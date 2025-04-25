@@ -34,11 +34,17 @@ const TwoFactorAuth = ({ userId, onSuccess }: TwoFactorAuthProps) => {
           description: "2FA verification successful",
         });
         onSuccess();
+      } else {
+        toast({
+          title: "Error",
+          description: "Invalid 2FA code",
+          variant: "destructive"
+        });
       }
     } catch (error) {
       toast({
         title: "Error",
-        description: "Invalid 2FA code",
+        description: "An error occurred during 2FA verification",
         variant: "destructive"
       });
     } finally {

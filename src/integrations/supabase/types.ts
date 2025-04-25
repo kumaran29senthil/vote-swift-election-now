@@ -79,6 +79,10 @@ export type Database = {
         Args: { role: Database["public"]["Enums"]["app_role"] }
         Returns: boolean
       }
+      verify_2fa: {
+        Args: { user_id: string; token: string }
+        Returns: boolean
+      }
     }
     Enums: {
       app_role: "admin" | "candidate" | "voter"
